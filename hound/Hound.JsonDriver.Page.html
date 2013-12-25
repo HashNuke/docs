@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hound.JsonDriver.Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        Hound.JsonDriver.Page
+        
+      </h1>
+
+      
+
+      <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+
+      
+
+      
+        <h2 id="functions_summary">Functions summary</h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#element_in_focus/0">element_in_focus()</a></td>
+  
+    <td class="summary_synopsis"><p>Gets element on page that is currently in focus.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#find_all_elements/2">find_all_elements(strategy, selector)</a></td>
+  
+    <td class="summary_synopsis"><p>Finds elements on current page. Returns an array of element IDs that can be used with other element functions.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#find_all_within_element/3">find_all_within_element(element_id, strategy, selector)</a></td>
+  
+    <td class="summary_synopsis"><p>Finds elements within a specific element. Returns an array of element IDs that can be used with other element functions.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#find_element/2">find_element(strategy, selector)</a></td>
+  
+    <td class="summary_synopsis"><p>Finds element on current page. It returns an element ID that can be used with other element functions.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#find_within_element/3">find_within_element(element_id, strategy, selector)</a></td>
+  
+    <td class="summary_synopsis"><p>Finds element within a specific element. Returns an element ID to use with element helper functions.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#page_source/0">page_source()</a></td>
+  
+    <td class="summary_synopsis"><p>Gets the HTML source of current page.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#page_title/0">page_title()</a></td>
+  
+    <td class="summary_synopsis"><p>Gets the title of the current page.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#send_keys/1">send_keys(keys)</a></td>
+  
+    <td class="summary_synopsis"><p>Send sequence of key strokes to active element. The modifier keys are not released after this command is run.</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <p class="signature" id="element_in_focus/0">
+    <strong>element_in_focus()</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>element_in_focus :: <a href="http://elixir-lang.org/docs/master/Dict.html#t:t/0">Dict.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Gets element on page that is currently in focus.</p>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="find_all_elements/2">
+    <strong>find_all_elements(strategy, selector)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>find_all_elements(atom, <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/master/List.html#t:t/0">List.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Finds elements on current page. Returns an array of element IDs that can be used with other element functions.</p>
+
+<ul>
+<li>The first argument is the strategy.</li>
+<li>The second argument is the selector.</li>
+</ul>
+
+<p>Valid selector strategies are <code>:css</code>, <code>:class</code>, <code>:id</code>, <code>:name</code>, <code>:tag</code>, <code>:xpath</code>, <code>:link_text</code> and <code>:partial_link_text</code></p>
+
+<pre><code>find_elements(:name, &quot;username&quot;)
+find_elements(:class, &quot;example&quot;)
+find_elements(:id, &quot;example&quot;)
+find_elements(:css, &quot;.example&quot;)
+find_elements(:tag, &quot;footer&quot;)
+find_elements(:link_text, &quot;Home&quot;)
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="find_all_within_element/3">
+    <strong>find_all_within_element(element_id, strategy, selector)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>find_all_within_element(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/master/List.html#t:t/0">List.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Finds elements within a specific element. Returns an array of element IDs that can be used with other element functions.</p>
+
+<ul>
+<li>The first argument is the element ID of the element within which you want to search.</li>
+<li>The second argument is the strategy.</li>
+<li>The third argument is the selector.</li>
+</ul>
+
+<p>Valid selector strategies are <code>:css</code>, <code>:class</code>, <code>:id</code>, <code>:name</code>, <code>:tag</code>, <code>:xpath</code>, <code>:link_text</code> and <code>:partial_link_text</code></p>
+
+<pre><code># First get an element ID to search within
+parent_element_id = find_element(:class, &quot;container&quot;)
+
+find_all_within_element(parent_element_id, :name, &quot;username&quot;)
+find_all_within_element(parent_element_id, :class, &quot;example&quot;)
+find_all_within_element(parent_element_id, :id, &quot;example&quot;)
+find_all_within_element(parent_element_id, :css, &quot;.example&quot;)
+find_all_within_element(parent_element_id, :tag, &quot;footer&quot;)
+find_all_within_element(parent_element_id, :link_text, &quot;Home&quot;)
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="find_element/2">
+    <strong>find_element(strategy, selector)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>find_element(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/master/Dict.html#t:t/0">Dict.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Finds element on current page. It returns an element ID that can be used with other element functions.</p>
+
+<ul>
+<li>The first argument is the strategy.</li>
+<li>The second argument is the selector.</li>
+</ul>
+
+<p>Valid selector strategies are <code>:css</code>, <code>:class</code>, <code>:id</code>, <code>:name</code>, <code>:tag</code>, <code>:xpath</code>, <code>:link_text</code> and <code>:partial_link_text</code></p>
+
+<pre><code>find_element(:name, &quot;username&quot;)
+find_element(:class, &quot;example&quot;)
+find_element(:id, &quot;example&quot;)
+find_element(:css, &quot;.example&quot;)
+find_element(:tag, &quot;footer&quot;)
+find_element(:link_text, &quot;Home&quot;)
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="find_within_element/3">
+    <strong>find_within_element(element_id, strategy, selector)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>find_within_element(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/master/Dict.html#t:t/0">Dict.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Finds element within a specific element. Returns an element ID to use with element helper functions.</p>
+
+<ul>
+<li>The first argument is the element ID of the element within which you want to search.</li>
+<li>The second argument is the strategy.</li>
+<li>The third argument is the selector.</li>
+</ul>
+
+<p>Valid selector strategies are <code>:css</code>, <code>:class</code>, <code>:id</code>, <code>:name</code>, <code>:tag</code>, <code>:xpath</code>, <code>:link_text</code> and <code>:partial_link_text</code></p>
+
+<pre><code># First get an element ID to search within
+parent_element_id = find_element(:class, &quot;container&quot;)
+
+find_within_element(parent_element_id, :name, &quot;username&quot;)
+find_within_element(parent_element_id, :class, &quot;example&quot;)
+find_within_element(parent_element_id, :id, &quot;example&quot;)
+find_within_element(parent_element_id, :css, &quot;.example&quot;)
+find_within_element(parent_element_id, :tag, &quot;footer&quot;)
+find_within_element(parent_element_id, :link_text, &quot;Home&quot;)
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="page_source/0">
+    <strong>page_source()</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>page_source :: <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Gets the HTML source of current page.</p>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="page_title/0">
+    <strong>page_title()</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>page_title :: <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Gets the title of the current page.</p>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="send_keys/1">
+    <strong>send_keys(keys)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>send_keys(<a href="http://elixir-lang.org/docs/master/List.html#t:t/0">List.t</a>) :: :ok</li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Send sequence of key strokes to active element. The modifier keys are not released after this command is run.</p>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+
+        </div>
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>
