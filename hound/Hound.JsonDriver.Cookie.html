@@ -26,6 +26,11 @@
       </h1>
 
       
+        <div id="moduledoc" class="docstring">
+          <p>Provides cookie-related functions.</p>
+
+        </div>
+      
 
       <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
 
@@ -37,7 +42,7 @@
           <tr>
   <td class="summary_signature"><a href="#cookies/0">cookies()</a></td>
   
-    <td class="summary_synopsis"><p>Get cookies</p>
+    <td class="summary_synopsis"><p>Gets cookies. Returns a list of ListDicts, each containing properties of the cookie.</p>
 </td>
   
 </tr>
@@ -58,7 +63,7 @@
 <tr>
   <td class="summary_signature"><a href="#set_cookie/1">set_cookie(cookie)</a></td>
   
-    <td class="summary_synopsis"><p>Set cookie</p>
+    <td class="summary_synopsis"><p>Sets cookie.</p>
 </td>
   
 </tr>
@@ -87,7 +92,10 @@
       
     </ul>
   
-  <div class="docstring"><p>Get cookies</p>
+  <div class="docstring"><p>Gets cookies. Returns a list of ListDicts, each containing properties of the cookie.</p>
+
+<pre><code>get_cookies()
+</code></pre>
 </div>
   
     <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
@@ -137,11 +145,26 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>set_cookie(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: :ok</li>
+        <li>set_cookie(<a href="http://elixir-lang.org/docs/master/Dict.html#t:t/0">Dict.t</a>) :: :ok</li>
       
     </ul>
   
-  <div class="docstring"><p>Set cookie</p>
+  <div class="docstring"><p>Sets cookie.</p>
+
+<pre><code>set_cookie([name: &quot;cart_id&quot;, value: 123213])
+set_cookie([name: &quot;cart_id&quot;, value: &quot;23fa0ev5a6er&quot;, secure: true])
+</code></pre>
+
+<p>Accepts a ListDict with the following keys:</p>
+
+<ul>
+<li>name (string) - REQUIRED</li>
+<li>value (string) - REQUIRED</li>
+<li>path (string)</li>
+<li>domain (string)</li>
+<li>secure (boolean)</li>
+<li>expiry (integer, specified in seconds since midnight, January 1, 1970 UTC)</li>
+</ul>
 </div>
   
     <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>

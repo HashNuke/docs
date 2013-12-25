@@ -22,16 +22,21 @@
     <div id="content">
       <h1>Hound</h1>
 
-<p>Elixir WebDriver library</p>
+<p>Elixir library to write integration tests using webdriver.</p>
+
+<p><a href="http://akash.im/docs/hound">Documentation</a></p>
 
 <p><a href="https://travis-ci.org/HashNuke/hound"><img src="https://travis-ci.org/HashNuke/hound.png?branch=master" alt="Build Status"></a></p>
 
 <h2>Features</h2>
 
 <ul>
-<li>Supports running <strong>multiple browser sessions</strong> simultaneously !!!</li>
-<li>Implements the <a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol">WebDriver Wire Protocol</a> based on the W3C WebDriver spec.</li>
+<li><p>Can run <strong>multiple browser sessions</strong> simultaneously. <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">See example</a>.</p></li>
+<li><p>Supports Selenium (Firefox, Chrome) and PhantomJs.</p></li>
+<li><p>Implements the WebDriver Wire Protocol.</p></li>
 </ul>
+
+<p>**IE may work, but hasn&#39;t been tested.</p>
 
 <h4>Example</h4>
 
@@ -42,9 +47,13 @@
   hound_session
 
   test &quot;the truth&quot;, meta do
-    #TODO need a better example
-    navigate_to(&quot;http://google.com&quot;)
-    assert(true)
+    navigate_to(&quot;http://example.com/guestbook.html&quot;)
+
+    find_element(:name, &quot;message&quot;)
+    |&gt; fill_field(&quot;Happy Birthday ~!&quot;)
+    |&gt; submit_element()
+
+    assert page_title() == &quot;Thank you&quot;
   end
 
 end
@@ -82,27 +91,40 @@ hound_session
 
 <p>If you prefer to manually start and end sessions, use <code>Hound.start_session</code> and <code>Hound.end_session</code> in the setup and teardown blocks of your tests.</p>
 
-<h3>Multiple browser sessions simultaneously</h3>
+<h2>Helpers</h2>
 
-<p>I know, you are curious, check it out</p>
-
-<h3>Helpers</h3>
-
-<p>TODO add links to the following</p>
+<p>The documentation pages include examples under each function.</p>
 
 <ul>
-<li>Page</li>
-<li>Element</li>
-<li>Navigation</li>
-<li>Orientation</li>
-<li>Cookies</li>
-<li>Dialog</li>
-<li>Javascript execution</li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Navigation.html">Navigation</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Page.html">Page</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Element.html">Element</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Cookie.html">Cookies</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.ScriptExecution.html">Javascript execution</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Dialog.html">Javascript dialogs</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Screenshot.html">Screenshot</a></li>
 </ul>
 
-<h2>Reference</h2>
+<p>The docs are at <a href="http://akash.im/docs/hound">http://akash.im/docs/hound</a>.</p>
 
-<p><a href="https://code.google.com/p/selenium/wiki/JsonWireProtocol">https://code.google.com/p/selenium/wiki/JsonWireProtocol</a></p>
+<h3>More examples? <a href="https://github.com/HashNuke/hound/tree/master/test/json_driver">Checkout Hound&#39;s own test cases</a></h3>
+
+<h2>Run multiple browser sessions simultaneously</h2>
+
+<p>Oh yeah ~! <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">Here is an example</a>.</p>
+
+<p>If you are running PhantomJs, take a look at the <em>Caveats</em> section below.</p>
+
+<h2>Caveats</h2>
+
+<p>PhantomJs is extremely fast, but there are certain caveats. It uses Ghostdriver for it&#39;s webdriver server, which currently has unimplemented features or open issues.</p>
+
+<ul>
+<li>Cookie jar isn&#39;t seperate for sessions - <a href="https://github.com/ariya/phantomjs/issues/11417">https://github.com/ariya/phantomjs/issues/11417</a>
+Which means all sessions share the same cookies. Make sure you run <code>delete_cookies()</code> at the end of each test.</li>
+<li>Sessions are not isolated - <a href="https://github.com/detro/ghostdriver/issues/170">https://github.com/detro/ghostdriver/issues/170</a>.</li>
+<li>Javascript alerts aren&#39;t yet supported - <a href="https://github.com/detro/ghostdriver/issues/20">https://github.com/detro/ghostdriver/issues/20</a>.</li>
+</ul>
 
 <h2>License</h2>
 
