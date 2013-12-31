@@ -35,9 +35,10 @@
         <h2 id="functions_summary">Functions summary</h2>
         <table class="summary">
           <tr>
-  <td class="summary_signature"><a href="#take_screenshot/0">take_screenshot()</a></td>
+  <td class="summary_signature"><a href="#take_screenshot/1">take_screenshot(path // nil)</a></td>
   
-    <td class="summary_synopsis"><p>Take screenshot of the current page</p>
+    <td class="summary_synopsis"><p>Takes screenshot of the current page. The screenshot is saved in the current working directory.
+It returns the path of the png file, to which the screenshot has been saved.</p>
 </td>
   
 </tr>
@@ -55,18 +56,33 @@
         <div id="functions_details" class="details_list">
           <h2>Functions</h2>
           <div class="detail">
-  <p class="signature" id="take_screenshot/0">
-    <strong>take_screenshot()</strong>
+  <p class="signature" id="take_screenshot/1">
+    <strong>take_screenshot(path // nil)</strong>
   </p>
   
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>take_screenshot :: <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a></li>
+        <li>take_screenshot(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a></li>
       
     </ul>
   
-  <div class="docstring"><p>Take screenshot of the current page</p>
+  <div class="docstring"><p>Takes screenshot of the current page. The screenshot is saved in the current working directory.
+It returns the path of the png file, to which the screenshot has been saved.</p>
+
+<p>For Elixir mix projects, the saved screenshot can be found in the root of the project directory.</p>
+
+<pre><code>take_screenshot()
+</code></pre>
+
+<p>You can also pass a file path to which the screenshot must be saved to.</p>
+
+<pre><code># Pass a full file path
+take_screenshot(&quot;/media/screenshots/test.png&quot;)
+
+# Or you can also pass a path relative to the current directory.
+take_screenshot(&quot;screenshot-test.png&quot;)
+</code></pre>
 </div>
   
     <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>

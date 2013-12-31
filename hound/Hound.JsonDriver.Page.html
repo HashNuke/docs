@@ -86,7 +86,15 @@
 <tr>
   <td class="summary_signature"><a href="#send_keys/1">send_keys(keys)</a></td>
   
-    <td class="summary_synopsis"><p>Send sequence of key strokes to active element. The modifier keys are not released after this command is run.</p>
+    <td class="summary_synopsis"><p>Send sequence of key strokes to active element.
+The keys are accepted as a list of atoms.</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#send_text/1">send_text(keys)</a></td>
+  
+    <td class="summary_synopsis"><p>Send character keys to active element.</p>
 </td>
   
 </tr>
@@ -94,6 +102,18 @@
         </table>
       
 
+      
+        <h2 id="macros_summary">Macros summary</h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#with_keys/2">with_keys(keys, blocks)</a></td>
+  
+    <td class="summary_synopsis"><p>Holds on to the spcified modifier keys when the block is executing.</p>
+</td>
+  
+</tr>
+
+        </table>
       
 
       
@@ -305,11 +325,78 @@ find_within_element(parent_element_id, :link_text, &quot;Home&quot;)
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>send_keys(<a href="http://elixir-lang.org/docs/master/List.html#t:t/0">List.t</a>) :: :ok</li>
+        <li>send_keys(<a href="http://elixir-lang.org/docs/master/List.html#t:t/0">List.t</a> | atom) :: :ok</li>
       
     </ul>
   
-  <div class="docstring"><p>Send sequence of key strokes to active element. The modifier keys are not released after this command is run.</p>
+  <div class="docstring"><p>Send sequence of key strokes to active element.
+The keys are accepted as a list of atoms.</p>
+
+<pre><code>send_keys :backspace
+send_keys :tab
+</code></pre>
+
+<p>If you send the modifier keys shift, control, alt and command,
+they are held on and not released until you send the <code>:null</code> key.</p>
+
+<p>To perform other actions while holding on to modifier keys, use the <code>with_keys</code> macro.</p>
+
+<p>The following are the atoms representing the keys:</p>
+
+<ul>
+<li>:alt - alt key</li>
+<li>:shift - shift key</li>
+<li>:command - command key (or meta key)</li>
+<li>:control - control key</li>
+<li>:escape - escape key</li>
+<li>:backspace - backspace key</li>
+<li>:tab - tab key</li>
+<li>:clear - clear</li>
+<li>:return - return key</li>
+<li>:enter - enter key</li>
+<li>:cancel - cancel key</li>
+<li>:help - help key</li>
+<li>:pause - pause key</li>
+<li>:num0 - numpad 0</li>
+<li>:num1 - numpad 1</li>
+<li>:num2 - numpad 2</li>
+<li>:num3 - numpad 3</li>
+<li>:num4 - numpad 4</li>
+<li>:num5 - numpad 5</li>
+<li>:num6 - numpad 6</li>
+<li>:num7 - numpad 7</li>
+<li>:num8 - numpad 8</li>
+<li>:num9 - numpad 9</li>
+<li>:add - add key</li>
+<li>:subtract - subtract key</li>
+<li>:multiply - multiply key</li>
+<li>:divide - divide key</li>
+<li>:seperator - seperator key</li>
+</ul>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <p class="signature" id="send_text/1">
+    <strong>send_text(keys)</strong>
+  </p>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>send_text(<a href="http://elixir-lang.org/docs/master/String.html#t:t/0">String.t</a>) :: :ok</li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Send character keys to active element.</p>
+
+<pre><code>send_text &quot;test&quot;
+send_text &quot;whatever happens&quot;
+</code></pre>
+
+<p>To send key strokes like tab, enter, etc, take a look at <code>send_keys</code>.</p>
 </div>
   
     <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
@@ -319,6 +406,43 @@ find_within_element(parent_element_id, :link_text, &quot;Home&quot;)
         </div>
       
 
+      
+        <div id="macros_details" class="details_list">
+          <h2>Macros</h2>
+          <div class="detail">
+  <p class="signature" id="with_keys/2">
+    <strong>with_keys(keys, blocks)</strong>
+  </p>
+  
+  <div class="docstring"><p>Holds on to the spcified modifier keys when the block is executing.</p>
+
+<pre><code># Simulates Ctrl + e
+with_keys :control do
+  send_text &quot;e&quot;
+end
+
+# Simulates Ctrl + Shift + e
+with_keys [:control, :shift] do
+  send_text &quot;e&quot;
+end
+</code></pre>
+
+<p>The following are the modifier keys:</p>
+
+<ul>
+<li>:alt - alt key</li>
+<li>:shift - shift key</li>
+<li>:command - command key (or meta key)</li>
+<li>:control - control key</li>
+<li>:escape - escape key</li>
+</ul>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" target="_blank" class="view_source">Source</a>
+  
+</div>
+
+        </div>
       
 
       
