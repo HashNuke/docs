@@ -38,7 +38,8 @@
   <td class="summary_signature"><a href="#change_session_to/1">change_session_to(session_name)</a></td>
   
     <td class="summary_synopsis"><p>When you need more than one browser session, use this function switch to another session.
-If the session doesn&#39;t exist it a new one will be created for you.</p>
+If the session doesn&#39;t exist it a new one will be created for you.
+All further commands will then run in the session you switched to.</p>
 </td>
   
 </tr>
@@ -89,7 +90,8 @@ If the session doesn&#39;t exist it a new one will be created for you.</p>
   </p>
   
   <div class="docstring"><p>When you need more than one browser session, use this function switch to another session.
-If the session doesn&#39;t exist it a new one will be created for you.</p>
+If the session doesn&#39;t exist it a new one will be created for you.
+All further commands will then run in the session you switched to.</p>
 
 <pre><code># Pass any name to the session to refer to it later.
 Hound.change_session_to(&quot;random-session&quot;)

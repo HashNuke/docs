@@ -66,13 +66,25 @@ end
 
 <pre class="codeblock"><code>{ :hound, github: &quot;HashNuke/hound&quot; }
 </code></pre></li>
-<li><p>Start Hound in <code>test_helper.exs</code></p>
+<li><p>Start Hound in <code>test_helper.exs</code>. Here are some examples:</p>
 
-<pre class="codeblock"><code># Start Hound for localhost webdriver server (Selenium assumed at port 4444)
+<pre class="codeblock"><code># Start Hound for Selenium server (default port 4444 assumed)
 Hound.start
 
-# Start Hound for remote webdriver server at port 5555
-Hound.start [host: &quot;http://example.com&quot;, port: 5555]
+# Or, you can also use
+Hound.start([driver: &quot;selenium&quot;])
+
+# Start Hound for Selenium at port 1234 and use firefox browser
+Hound.start [port: 1234, browser: &quot;firefox&quot;]
+
+# Start Hound for ChromeDriver (default port 9515 assumed)
+Hound.start [driver: &quot;chrome_driver&quot;]
+
+# Start Hound for PhantomJs (default port 8910 assumed)
+Hound.start [driver: &quot;phantomjs&quot;]
+
+# Start Hound for remote phantomjs server at port 5555
+Hound.start [driver: &quot;phantomjs&quot;, host: &quot;http://example.com&quot;, port: 5555]
 </code></pre></li>
 </ul>
 
@@ -115,7 +127,7 @@ hound_session
 
 <p>If you are running PhantomJs, take a look at the <em>Caveats</em> section below.</p>
 
-<h2>Caveats</h2>
+<h2>PhantomJs caveats</h2>
 
 <p>PhantomJs is extremely fast, but there are certain caveats. It uses Ghostdriver for it&#39;s webdriver server, which currently has unimplemented features or open issues.</p>
 
