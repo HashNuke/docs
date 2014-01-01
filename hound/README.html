@@ -32,13 +32,15 @@
 
 <ul>
 <li><p>Can run <strong>multiple browser sessions</strong> simultaneously. <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">See example</a>.</p></li>
-<li><p>Supports Selenium (Firefox, Chrome) and PhantomJs.</p></li>
+<li><p>Supports Selenium (Firefox, Chrome), ChromeDriver and PhantomJs.</p></li>
 <li><p>Implements the WebDriver Wire Protocol.</p></li>
 </ul>
 
-<p>**IE may work, but hasn&#39;t been tested.</p>
+<p>**Internet Explorer may work under Selenium, but hasn&#39;t been tested.</p>
 
 <h4>Example</h4>
+
+<h5>ExUnit example</h5>
 
 <pre><code class="elixir">defmodule HoundTest do
   use ExUnit.Case
@@ -59,12 +61,33 @@
 end
 </code></pre>
 
+<h5>Simple browser automation</h5>
+
+<pre><code class="elixir"># This needs to be started before before using the helpers
+{:ok, _hound_pid} = Hound.start()
+
+defmodule Example do
+  use Hound.Helpers
+
+  def run do
+    Hound.start_session
+
+    navigate_to &quot;http://akash.im&quot;
+    IO.inspect page_title()
+
+    Hound.end_session
+  end
+end
+
+Example.run
+</code></pre>
+
 <h2>Setup</h2>
 
 <ul>
 <li><p>Add dependency to your mix project</p>
 
-<pre class="codeblock"><code>{ :hound, github: &quot;HashNuke/hound&quot;, tag: &quot;v0.5.0&quot; }
+<pre class="codeblock"><code>{ :hound, github: &quot;HashNuke/hound&quot;, tag: &quot;v0.5.1&quot; }
 </code></pre></li>
 <li><p>Start Hound in <code>test_helper.exs</code>. Here are some examples:</p>
 
