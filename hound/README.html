@@ -111,7 +111,7 @@ Hound.start [driver: &quot;phantomjs&quot;, host: &quot;http://example.com&quot;
 </code></pre></li>
 </ul>
 
-<p><strong>You&#39;ll need a webdriver server</strong> running, like Selenium Server or Chrome Driver. If you aren&#39;t sure what it is, then <a href="https://github.com/HashNuke/hound/wiki/Starting-a-webdriver-server">read this</a></p>
+<p><strong>You&#39;ll need a webdriver server</strong> running, like Selenium Server or Chrome Driver. If you aren&#39;t sure what it is, then <a href="https://github.com/HashNuke/hound/wiki/Starting-a-webdriver-server">read this</a>.</p>
 
 <h2>Usage</h2>
 
@@ -138,17 +138,30 @@ hound_session
 <li><a href="http://akash.im/docs/hound/Hound.JsonDriver.ScriptExecution.html">Javascript execution</a></li>
 <li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Dialog.html">Javascript dialogs</a></li>
 <li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Screenshot.html">Screenshot</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.JsonDriver.Session.html">Session</a></li>
 </ul>
 
 <p>The docs are at <a href="http://akash.im/docs/hound">http://akash.im/docs/hound</a>.</p>
 
 <h3>More examples? <a href="https://github.com/HashNuke/hound/tree/master/test/json_driver">Checkout Hound&#39;s own test cases</a></h3>
 
-<h2>Run multiple browser sessions simultaneously</h2>
+<h2>FAQ</h2>
+
+<h4>Can I run multiple browser sessions simultaneously</h4>
 
 <p>Oh yeah ~! <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">Here is an example</a>.</p>
 
 <p>If you are running PhantomJs, take a look at the <em>Caveats</em> section below.</p>
+
+<h4>Can I run tests async?</h4>
+
+<p>Yes.</p>
+
+<p>The number of tests you can run async at any point in time, depends on the number of sessions that your webdriver can maintain at a time. For Selenium Standalone, there seems to be a default limit of 15 sessions. You can set ExUnit&#39;s async option to limit the number of tests to run parallelly.</p>
+
+<h4>Will Hound gurantee an isolated session per test?</h4>
+
+<p>Yes. A seperate session is started for each session. </p>
 
 <h2>PhantomJs caveats</h2>
 
@@ -164,8 +177,6 @@ Which means all sessions share the same cookies. Make sure you run <code>delete_
 <h2>License</h2>
 
 <p>Copyright &copy; 2013, Akash Manohar J, under the MIT License</p>
-
-<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/HashNuke/hound/trend.png" alt="Bitdeli Badge"></a></p>
 
     </div>
   </body>
