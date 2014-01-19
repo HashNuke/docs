@@ -38,6 +38,8 @@
 
 <p>**Internet Explorer may work under Selenium, but hasn&#39;t been tested.</p>
 
+<p>**You&#39;ll needs Erlang R16B02 or higher to use Hound</p>
+
 <h4>Example</h4>
 
 <h5>ExUnit example</h5>
@@ -170,7 +172,7 @@ hound_session
 <ul>
 <li>Cookie jar isn&#39;t seperate for sessions - <a href="https://github.com/ariya/phantomjs/issues/11417">https://github.com/ariya/phantomjs/issues/11417</a>
 Which means all sessions share the same cookies. Make sure you run <code>delete_cookies()</code> at the end of each test.</li>
-<li>Sessions are not isolated - <a href="https://github.com/detro/ghostdriver/issues/170">https://github.com/detro/ghostdriver/issues/170</a>.</li>
+<li>Isolated sessions were added to GhostDriver recently and are yet to land in a PhantomJs release.</li>
 <li>Javascript alerts aren&#39;t yet supported - <a href="https://github.com/detro/ghostdriver/issues/20">https://github.com/detro/ghostdriver/issues/20</a>.</li>
 </ul>
 
