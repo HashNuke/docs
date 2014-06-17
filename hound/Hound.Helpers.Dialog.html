@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hound.JsonDriver.Navigation</title>
+    <title>Hound.Helpers.Dialog</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -20,10 +20,10 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.Navigation.html">Navigation</a></div>
+      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Dialog.html">Dialog</a></div>
 
       <h1>
-        Hound.JsonDriver.Navigation
+        Hound.Helpers.Dialog
         
       </h1>
 
@@ -41,7 +41,7 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Provides navigation functions.</p>
+          <p>Provides functions to handle Javascript dialogs alert(), prompt() and confirm().</p>
 
         </div>
       
@@ -54,23 +54,31 @@
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
-  <td class="summary_signature"><a href="#current_url/0">current_url()</a></td>
+  <td class="summary_signature"><a href="#accept_dialog/0">accept_dialog()</a></td>
+  
+    <td class="summary_synopsis"><p>Accepts javascript dialog</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_back/0">navigate_back()</a></td>
+  <td class="summary_signature"><a href="#dialog_text/0">dialog_text()</a></td>
+  
+    <td class="summary_synopsis"><p>Gets text of a javascript alert(), confirm() or prompt()</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_forward/0">navigate_forward()</a></td>
+  <td class="summary_signature"><a href="#dismiss_dialog/0">dismiss_dialog()</a></td>
+  
+    <td class="summary_synopsis"><p>Dismiss a javascript dialog</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_to/1">navigate_to(url)</a></td>
+  <td class="summary_signature"><a href="#input_into_prompt/1">input_into_prompt(input)</a></td>
   
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#refresh_page/0">refresh_page()</a></td>
+    <td class="summary_synopsis"><p>Inputs text to a javascript prompt()</p>
+</td>
   
 </tr>
 
@@ -83,11 +91,11 @@
         <div id="functions_details" class="details_list">
           <h2>Functions</h2>
           <div class="detail">
-  <div class="detail_header" id="current_url/0">
-    <span class="signature"><strong>current_url()</strong></span>
+  <div class="detail_header" id="accept_dialog/0">
+    <span class="signature"><strong>accept_dialog()</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#current_url/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#accept_dialog/0" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -95,21 +103,25 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>current_url :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></li>
+        <li>accept_dialog :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Accepts javascript dialog.</p>
+
+<pre><code>accept_dialog()
+</code></pre>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_back/0">
-    <span class="signature"><strong>navigate_back()</strong></span>
+  <div class="detail_header" id="dialog_text/0">
+    <span class="signature"><strong>dialog_text()</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_back/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#dialog_text/0" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -117,21 +129,25 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_back :: :ok</li>
+        <li>dialog_text :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Gets text of a javascript alert(), confirm() or prompt().</p>
+
+<pre><code>dialog_text()
+</code></pre>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_forward/0">
-    <span class="signature"><strong>navigate_forward()</strong></span>
+  <div class="detail_header" id="dismiss_dialog/0">
+    <span class="signature"><strong>dismiss_dialog()</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_forward/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#dismiss_dialog/0" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -139,21 +155,25 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_forward :: :ok</li>
+        <li>dismiss_dialog :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Dismiss a javascript dialog.</p>
+
+<pre><code>dismiss_dialog()
+</code></pre>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_to/1">
-    <span class="signature"><strong>navigate_to(url)</strong></span>
+  <div class="detail_header" id="input_into_prompt/1">
+    <span class="signature"><strong>input_into_prompt(input)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_to/1" class="detail_link" title="Link to this function">#</a>
+      <a href="#input_into_prompt/1" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -161,33 +181,15 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_to(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: :ok</li>
+        <li>input_into_prompt(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
+  <div class="docstring"><p>Inputs text to a javascript prompt().</p>
+
+<pre><code>input_into_prompt(&quot;John Doe&quot;)
+</code></pre>
 </div>
-<div class="detail">
-  <div class="detail_header" id="refresh_page/0">
-    <span class="signature"><strong>refresh_page()</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#refresh_page/0" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
-  </div>
-  
-    <p>Specs:</p>
-    <ul class="spec">
-      
-        <li>refresh_page :: :ok</li>
-      
-    </ul>
-  
-  <div class="docstring"></div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   

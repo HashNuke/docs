@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hound.JsonDriver.Screenshot</title>
+    <title>Hound.Helpers.Screenshot</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -20,10 +20,10 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.Screenshot.html">Screenshot</a></div>
+      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Screenshot.html">Screenshot</a></div>
 
       <h1>
-        Hound.JsonDriver.Screenshot
+        Hound.Helpers.Screenshot
         
       </h1>
 
@@ -50,6 +50,10 @@
         <table class="summary">
           <tr>
   <td class="summary_signature"><a href="#take_screenshot/1">take_screenshot(path \\ nil)</a></td>
+  
+    <td class="summary_synopsis"><p>Takes screenshot of the current page. The screenshot is saved in the current working directory.
+It returns the path of the png file, to which the screenshot has been saved</p>
+</td>
   
 </tr>
 
@@ -78,7 +82,23 @@
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Takes screenshot of the current page. The screenshot is saved in the current working directory.
+It returns the path of the png file, to which the screenshot has been saved.</p>
+
+<p>For Elixir mix projects, the saved screenshot can be found in the root of the project directory.</p>
+
+<pre><code>take_screenshot()
+</code></pre>
+
+<p>You can also pass a file path to which the screenshot must be saved to.</p>
+
+<pre><code># Pass a full file path
+take_screenshot(&quot;/media/screenshots/test.png&quot;)
+
+# Or you can also pass a path relative to the current directory.
+take_screenshot(&quot;screenshot-test.png&quot;)
+</code></pre>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   

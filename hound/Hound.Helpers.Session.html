@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hound.Helpers.Session</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Session.html">Session</a></div>
+
+      <h1>
+        Hound.Helpers.Session
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+        
+      </ul>
+
+      
+        <div id="moduledoc" class="docstring">
+          <p>Functions to switch sessions.</p>
+
+        </div>
+      
+
+      
+        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#change_session_to/1">change_session_to(session_name)</a></td>
+  
+    <td class="summary_synopsis"><p>When you need more than one browser session, use this function switch to another session.
+If the session doesn&#39;t exist it a new one will be created for you.
+All further commands will then run in the session you switched to</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#change_to_default_session/0">change_to_default_session()</a></td>
+  
+    <td class="summary_synopsis"><p>When running multiple browser sessions, calling this function will switch to the default browser session</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#in_browser_session/2">in_browser_session(session_name, func)</a></td>
+  
+    <td class="summary_synopsis"><p>Execute commands in a seperate browser session</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <div class="detail_header" id="change_session_to/1">
+    <span class="signature"><strong>change_session_to(session_name)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#change_session_to/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>When you need more than one browser session, use this function switch to another session.
+If the session doesn&#39;t exist it a new one will be created for you.
+All further commands will then run in the session you switched to.</p>
+
+<pre><code># Pass any name to the session to refer to it later.
+change_session_to(&quot;random-session&quot;)
+</code></pre>
+
+<p>The name can be an atom or a string. The default session created is called <code>:default</code>.</p>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="change_to_default_session/0">
+    <span class="signature"><strong>change_to_default_session()</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#change_to_default_session/0" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>When running multiple browser sessions, calling this function will switch to the default browser session.</p>
+
+<pre><code>change_to_default_session
+
+# is the same as calling
+change_session_to(:default)
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="in_browser_session/2">
+    <span class="signature"><strong>in_browser_session(session_name, func)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#in_browser_session/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Execute commands in a seperate browser session.</p>
+
+<pre><code>in_browser_session &quot;another_user&quot; do
+  navigate_to &quot;http://example.com&quot;
+  click({:id, &quot;announcement&quot;})
+end
+</code></pre>
+</div>
+  
+    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
+  
+</div>
+
+        </div>
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>

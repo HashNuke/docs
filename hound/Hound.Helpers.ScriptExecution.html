@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hound.JsonDriver.ScriptExecution</title>
+    <title>Hound.Helpers.ScriptExecution</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -20,10 +20,10 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.ScriptExecution.html">ScriptExecution</a></div>
+      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.ScriptExecution.html">ScriptExecution</a></div>
 
       <h1>
-        Hound.JsonDriver.ScriptExecution
+        Hound.Helpers.ScriptExecution
         
       </h1>
 
@@ -51,9 +51,15 @@
           <tr>
   <td class="summary_signature"><a href="#execute_script/2">execute_script(script_function, function_args \\ [])</a></td>
   
+    <td class="summary_synopsis"><p>Execute javascript synchoronously</p>
+</td>
+  
 </tr>
 <tr>
   <td class="summary_signature"><a href="#execute_script_async/2">execute_script_async(script_function, function_args \\ [])</a></td>
+  
+    <td class="summary_synopsis"><p>Execute javascript asynchoronously</p>
+</td>
   
 </tr>
 
@@ -82,7 +88,19 @@
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Execute javascript synchoronously.</p>
+
+<ul>
+<li>The first argument is the script to execute.</li>
+<li><p>The second argument is a list of arguments that is passed.
+These arguments are accessible in the script via <code>arguments</code>.</p>
+
+<pre><code>execute_script(&quot;return(arguments[0] + arguments[1]);&quot;, [1, 2])
+
+execute_script(&quot;doSomething(); return(arguments[0] + arguments[1]);&quot;)
+</code></pre></li>
+</ul>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
@@ -104,7 +122,29 @@
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Execute javascript asynchoronously.</p>
+
+<ul>
+<li>The first argument is the script to execute.</li>
+<li>The second argument is a list of arguments that is passed.
+These arguments are accessible in the script via <code>arguments</code>.</li>
+</ul>
+
+<p>Webdriver passes a callback function as the last argument to the script.
+When your script has completed execution, it has to call the last argument,
+which is a callback function, to indicate that the execute is complete.</p>
+
+<pre><code># Once we perform whatever we want,
+# we call the callback function with the arguments that must be returned.
+execute_script_async(&quot;doSomething(); arguments[arguments.length-1](&#39;hello&#39;)&quot;, [])
+
+# We have no arguments to pass, so we&#39;ll skip the second argument.
+execute_script_async(&quot;console.log(&#39;hello&#39;); doSomething(); arguments[arguments.length-1]()&quot;)
+</code></pre>
+
+<p>Unless you call the callback function, the function is not assumed to be completed.
+It will error out.</p>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   

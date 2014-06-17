@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hound.JsonDriver.Navigation</title>
+    <title>Hound.Helpers.Cookie</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -20,10 +20,10 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.Navigation.html">Navigation</a></div>
+      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Cookie.html">Cookie</a></div>
 
       <h1>
-        Hound.JsonDriver.Navigation
+        Hound.Helpers.Cookie
         
       </h1>
 
@@ -41,7 +41,7 @@
 
       
         <div id="moduledoc" class="docstring">
-          <p>Provides navigation functions.</p>
+          <p>Provides cookie-related functions.</p>
 
         </div>
       
@@ -54,23 +54,31 @@
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
-  <td class="summary_signature"><a href="#current_url/0">current_url()</a></td>
+  <td class="summary_signature"><a href="#cookies/0">cookies()</a></td>
+  
+    <td class="summary_synopsis"><p>Gets cookies. Returns a list of ListDicts, each containing properties of the cookie</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_back/0">navigate_back()</a></td>
+  <td class="summary_signature"><a href="#delete_cookie/1">delete_cookie(name)</a></td>
+  
+    <td class="summary_synopsis"><p>Delete a cookie with the given name</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_forward/0">navigate_forward()</a></td>
+  <td class="summary_signature"><a href="#delete_cookies/0">delete_cookies()</a></td>
+  
+    <td class="summary_synopsis"><p>Delete all cookies</p>
+</td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#navigate_to/1">navigate_to(url)</a></td>
+  <td class="summary_signature"><a href="#set_cookie/1">set_cookie(cookie)</a></td>
   
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#refresh_page/0">refresh_page()</a></td>
+    <td class="summary_synopsis"><p>Sets cookie</p>
+</td>
   
 </tr>
 
@@ -83,11 +91,11 @@
         <div id="functions_details" class="details_list">
           <h2>Functions</h2>
           <div class="detail">
-  <div class="detail_header" id="current_url/0">
-    <span class="signature"><strong>current_url()</strong></span>
+  <div class="detail_header" id="cookies/0">
+    <span class="signature"><strong>cookies()</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#current_url/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#cookies/0" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -95,21 +103,25 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>current_url :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></li>
+        <li>cookies :: <a href="http://elixir-lang.org/docs/stable/elixir/List.html#t:t/0">List.t</a></li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Gets cookies. Returns a list of ListDicts, each containing properties of the cookie.</p>
+
+<pre><code>cookies()
+</code></pre>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_back/0">
-    <span class="signature"><strong>navigate_back()</strong></span>
+  <div class="detail_header" id="delete_cookie/1">
+    <span class="signature"><strong>delete_cookie(name)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_back/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#delete_cookie/1" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -117,21 +129,22 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_back :: :ok</li>
+        <li>delete_cookie(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Delete a cookie with the given name</p>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_forward/0">
-    <span class="signature"><strong>navigate_forward()</strong></span>
+  <div class="detail_header" id="delete_cookies/0">
+    <span class="signature"><strong>delete_cookies()</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_forward/0" class="detail_link" title="Link to this function">#</a>
+      <a href="#delete_cookies/0" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -139,21 +152,22 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_forward :: :ok</li>
+        <li>delete_cookies :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
+  <div class="docstring"><p>Delete all cookies</p>
+</div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
-  <div class="detail_header" id="navigate_to/1">
-    <span class="signature"><strong>navigate_to(url)</strong></span>
+  <div class="detail_header" id="set_cookie/1">
+    <span class="signature"><strong>set_cookie(cookie)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#navigate_to/1" class="detail_link" title="Link to this function">#</a>
+      <a href="#set_cookie/1" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -161,33 +175,27 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>navigate_to(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: :ok</li>
+        <li>set_cookie(<a href="http://elixir-lang.org/docs/stable/elixir/Dict.html#t:t/0">Dict.t</a>) :: :ok</li>
       
     </ul>
   
-  <div class="docstring"></div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
+  <div class="docstring"><p>Sets cookie.</p>
+
+<pre><code>set_cookie([name: &quot;cart_id&quot;, value: 123213])
+set_cookie([name: &quot;cart_id&quot;, value: &quot;23fa0ev5a6er&quot;, secure: true])
+</code></pre>
+
+<p>Accepts a ListDict with the following keys:</p>
+
+<ul>
+<li>name (string) - REQUIRED</li>
+<li>value (string) - REQUIRED</li>
+<li>path (string)</li>
+<li>domain (string)</li>
+<li>secure (boolean)</li>
+<li>expiry (integer, specified in seconds since midnight, January 1, 1970 UTC)</li>
+</ul>
 </div>
-<div class="detail">
-  <div class="detail_header" id="refresh_page/0">
-    <span class="signature"><strong>refresh_page()</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#refresh_page/0" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
-  </div>
-  
-    <p>Specs:</p>
-    <ul class="spec">
-      
-        <li>refresh_page :: :ok</li>
-      
-    </ul>
-  
-  <div class="docstring"></div>
   
     <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
