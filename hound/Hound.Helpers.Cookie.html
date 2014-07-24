@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Cookie.html">Cookie</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Cookie.html">Cookie</a></div>
 
       <h1>
         Hound.Helpers.Cookie
@@ -46,8 +46,6 @@
         </div>
       
 
-      
-        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
       
 
       
@@ -108,12 +106,12 @@
     </ul>
   
   <div class="docstring"><p>Gets cookies. Returns a list of ListDicts, each containing properties of the cookie.</p>
+<pre><code>
+cookies()
 
-<pre><code>cookies()
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -136,8 +134,6 @@
   <div class="docstring"><p>Delete a cookie with the given name</p>
 </div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
   <div class="detail_header" id="delete_cookies/0">
@@ -159,8 +155,6 @@
   <div class="docstring"><p>Delete all cookies</p>
 </div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
   <div class="detail_header" id="set_cookie/1">
@@ -180,24 +174,27 @@
     </ul>
   
   <div class="docstring"><p>Sets cookie.</p>
-
-<pre><code>set_cookie([name: &quot;cart_id&quot;, value: 123213])
+<pre><code>
+set_cookie([name: &quot;cart_id&quot;, value: 123213])
 set_cookie([name: &quot;cart_id&quot;, value: &quot;23fa0ev5a6er&quot;, secure: true])
+
 </code></pre>
-
 <p>Accepts a ListDict with the following keys:</p>
-
 <ul>
-<li>name (string) - REQUIRED</li>
-<li>value (string) - REQUIRED</li>
-<li>path (string)</li>
-<li>domain (string)</li>
-<li>secure (boolean)</li>
-<li>expiry (integer, specified in seconds since midnight, January 1, 1970 UTC)</li>
+<li>name (string) - REQUIRED
+</li>
+<li>value (string) - REQUIRED
+</li>
+<li>path (string)
+</li>
+<li>domain (string)
+</li>
+<li>secure (boolean)
+</li>
+<li>expiry (integer, specified in seconds since midnight, January 1, 1970 UTC)
+</li>
 </ul>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 

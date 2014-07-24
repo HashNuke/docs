@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a></div>
 
       <h1>
         Hound
@@ -42,14 +42,16 @@
       
 
       
-        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-      
 
       
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
         <table class="summary">
           <tr>
   <td class="summary_signature"><a href="#end_session/0">end_session()</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#end_session/1">end_session(pid)</a></td>
   
     <td class="summary_synopsis"><p>Ends a Hound session. If you have multiple sessions, all of those sessions are killed</p>
 </td>
@@ -81,12 +83,22 @@
     </div>
   </div>
   
-  <div class="docstring"><p>Ends a Hound session. If you have multiple sessions, all of those sessions are killed.</p>
-
-<p>For an example, take a look at the documentation for <code>start_session</code>.</p>
-</div>
+  <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
+</div>
+<div class="detail">
+  <div class="detail_header" id="end_session/1">
+    <span class="signature"><strong>end_session(pid)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#end_session/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Ends a Hound session. If you have multiple sessions, all of those sessions are killed.</p>
+<p>For an example, take a look at the documentation for <code class="inline">start_session</code>.</p>
+</div>
   
 </div>
 <div class="detail">
@@ -100,10 +112,9 @@
   </div>
   
   <div class="docstring"><p>Starts a Hound session.</p>
-
-<p>Use this in your test case&#39;s setup block to start a Hound session for each test case.</p>
-
-<pre><code>defmodule HoundTest do
+<p>Use this in your test case’s setup block to start a Hound session for each test case.</p>
+<pre><code>
+defmodule HoundTest do
   use ExUnit.Case
   use Hound.Helpers
 
@@ -127,10 +138,10 @@
   end
 
 end
+
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 

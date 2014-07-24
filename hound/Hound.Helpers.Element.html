@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Element.html">Element</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.Element.html">Element</a></div>
 
       <h1>
         Hound.Helpers.Element
@@ -49,8 +49,6 @@
       
 
       
-        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-      
 
       
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
@@ -58,14 +56,14 @@
           <tr>
   <td class="summary_signature"><a href="#attribute_value/2">attribute_value(element, attribute_name)</a></td>
   
-    <td class="summary_synopsis"><p>Gets an element&#39;s attribute value</p>
+    <td class="summary_synopsis"><p>Gets an element’s attribute value</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#clear_field/1">clear_field(element)</a></td>
   
-    <td class="summary_synopsis"><p>Clears textarea or input field&#39;s value</p>
+    <td class="summary_synopsis"><p>Clears textarea or input field’s value</p>
 </td>
   
 </tr>
@@ -79,7 +77,7 @@
 <tr>
   <td class="summary_signature"><a href="#css_property/2">css_property(element, property_name)</a></td>
   
-    <td class="summary_synopsis"><p>Gets an element&#39;s computed CSS property</p>
+    <td class="summary_synopsis"><p>Gets an element’s computed CSS property</p>
 </td>
   
 </tr>
@@ -100,21 +98,21 @@
 <tr>
   <td class="summary_signature"><a href="#element_location/1">element_location(element)</a></td>
   
-    <td class="summary_synopsis"><p>Gets an element&#39;s location on page. It returns the location as a tuple of the form {x, y}</p>
+    <td class="summary_synopsis"><p>Gets an element’s location on page. It returns the location as a tuple of the form {x, y}</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#element_size/1">element_size(element)</a></td>
   
-    <td class="summary_synopsis"><p>Gets an element&#39;s size in pixels. It returns the size as a tuple of the form {width, height}</p>
+    <td class="summary_synopsis"><p>Gets an element’s size in pixels. It returns the size as a tuple of the form {width, height}</p>
 </td>
   
 </tr>
 <tr>
   <td class="summary_signature"><a href="#fill_field/2">fill_field(element, input)</a></td>
   
-    <td class="summary_synopsis"><p>Sets a field&#39;s value. The difference with <code>input_info_field</code> is that, the field is cleared before entering the new value</p>
+    <td class="summary_synopsis"><p>Sets a field’s value. The difference with <code class="inline">input_info_field</code> is that, the field is cleared before entering the new value</p>
 </td>
   
 </tr>
@@ -149,7 +147,7 @@
 <tr>
   <td class="summary_signature"><a href="#tag_name/1">tag_name(element)</a></td>
   
-    <td class="summary_synopsis"><p>Gets an element&#39;s tag name</p>
+    <td class="summary_synopsis"><p>Gets an element’s tag name</p>
 </td>
   
 </tr>
@@ -203,19 +201,19 @@
       
     </ul>
   
-  <div class="docstring"><p>Gets an element&#39;s attribute value.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+  <div class="docstring"><p>Gets an element’s attribute value.</p>
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 attribute_value(element_id, &quot;data-greeting&quot;)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple, for the first argument</p>
+<pre><code>
+attribute_value({:name, &quot;example&quot;}, &quot;data-greeting&quot;)
 
-<pre><code>attribute_value({:name, &quot;example&quot;}, &quot;data-greeting&quot;)
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -235,19 +233,19 @@ attribute_value(element_id, &quot;data-greeting&quot;)
       
     </ul>
   
-  <div class="docstring"><p>Clears textarea or input field&#39;s value</p>
-
-<pre><code>element_id = find_element(:class, &quot;example&quot;)
+  <div class="docstring"><p>Clears textarea or input field’s value</p>
+<pre><code>
+element_id = find_element(:class, &quot;example&quot;)
 clear_field(element_id)
+
 </code></pre>
-
 <p>You can also directly pass the selector as a tuple.</p>
+<pre><code>
+clear_field({:class, &quot;example&quot;})
 
-<pre><code>clear_field({:class, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -268,18 +266,18 @@ clear_field(element_id)
     </ul>
   
   <div class="docstring"><p>Click on an element. You can also use this to click on checkboxes and radio buttons.</p>
-
-<pre><code>element_id = find_element(:id, &quot;.example&quot;)
+<pre><code>
+element_id = find_element(:id, &quot;.example&quot;)
 click(element_id)
+
 </code></pre>
-
 <p>You can also directly pass the selector as a tuple.</p>
+<pre><code>
+click({:id, &quot;example&quot;})
 
-<pre><code>click({:id, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -299,19 +297,19 @@ click(element_id)
       
     </ul>
   
-  <div class="docstring"><p>Gets an element&#39;s computed CSS property.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+  <div class="docstring"><p>Gets an element’s computed CSS property.</p>
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 css_property(element_id, &quot;display&quot;)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple, for the first argument</p>
+<pre><code>
+css_property({:name, &quot;example&quot;}, &quot;display&quot;)
 
-<pre><code>css_property({:name, &quot;example&quot;}, &quot;display&quot;)
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -332,18 +330,18 @@ css_property(element_id, &quot;display&quot;)
     </ul>
   
   <div class="docstring"><p>Checks if an element is currently displayed.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 element_displayed?(element_id)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple.</p>
+<pre><code>
+element_displayed?({:name, &quot;example&quot;})
 
-<pre><code>element_displayed?({:name, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -364,18 +362,18 @@ element_displayed?(element_id)
     </ul>
   
   <div class="docstring"><p>Checks if an input field is enabled.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 element_enabled?(element_id)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple.</p>
+<pre><code>
+element_enabled?({:name, &quot;example&quot;})
 
-<pre><code>element_enabled?({:name, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -395,19 +393,19 @@ element_enabled?(element_id)
       
     </ul>
   
-  <div class="docstring"><p>Gets an element&#39;s location on page. It returns the location as a tuple of the form {x, y}.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+  <div class="docstring"><p>Gets an element’s location on page. It returns the location as a tuple of the form {x, y}.</p>
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 element_location(element_id)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple.</p>
+<pre><code>
+element_location({:name, &quot;example&quot;})
 
-<pre><code>element_location({:name, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -427,19 +425,19 @@ element_location(element_id)
       
     </ul>
   
-  <div class="docstring"><p>Gets an element&#39;s size in pixels. It returns the size as a tuple of the form {width, height}.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+  <div class="docstring"><p>Gets an element’s size in pixels. It returns the size as a tuple of the form {width, height}.</p>
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 element_location(element_id)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple.</p>
+<pre><code>
+element_location({:name, &quot;example&quot;})
 
-<pre><code>element_location({:name, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -459,19 +457,19 @@ element_location(element_id)
       
     </ul>
   
-  <div class="docstring"><p>Sets a field&#39;s value. The difference with <code>input_info_field</code> is that, the field is cleared before entering the new value.</p>
-
-<pre><code>element_id = find_element(:id, &quot;example&quot;)
+  <div class="docstring"><p>Sets a field’s value. The difference with <code class="inline">input_info_field</code> is that, the field is cleared before entering the new value.</p>
+<pre><code>
+element_id = find_element(:id, &quot;example&quot;)
 fill_field(element_id, &quot;John Doe&quot;)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple, for the first argument.</p>
+<pre><code>
+fill_field({:id, &quot;example&quot;}, &quot;John Doe&quot;)
 
-<pre><code>fill_field({:id, &quot;example&quot;}, &quot;John Doe&quot;)
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -492,20 +490,19 @@ fill_field(element_id, &quot;John Doe&quot;)
     </ul>
   
   <div class="docstring"><p>Enters value into field.</p>
-
 <p>It does not clear the field before entering the new value. Anything passed is added to the value already present.</p>
-
-<pre><code>element_id = find_element(:id, &quot;example&quot;)
+<pre><code>
+element_id = find_element(:id, &quot;example&quot;)
 input_into_field(element_id, &quot;John Doe&quot;)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple, for the first argument.</p>
+<pre><code>
+input_into_field({:id, &quot;example&quot;}, &quot;John Doe&quot;)
 
-<pre><code>input_into_field({:id, &quot;example&quot;}, &quot;John Doe&quot;)
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -526,14 +523,14 @@ input_into_field(element_id, &quot;John Doe&quot;)
     </ul>
   
   <div class="docstring"><p>Checks if two element IDs refer to the same DOM element.</p>
-
-<pre><code>element_id1 = find_element(:name, &quot;username&quot;)
+<pre><code>
+element_id1 = find_element(:name, &quot;username&quot;)
 element_id2 = find_element(:id, &quot;user_name&quot;)
 same_element?(element_id1, element_id2)
+
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -554,18 +551,18 @@ same_element?(element_id1, element_id2)
     </ul>
   
   <div class="docstring"><p>Checks if a radio input group or checkbox has any value selected.</p>
-
-<pre><code>element_id = find_element(:name, &quot;example&quot;)
+<pre><code>
+element_id = find_element(:name, &quot;example&quot;)
 selected?(element_id)
+
 </code></pre>
-
 <p>You can also pass the selector as a tuple.</p>
+<pre><code>
+selected?({:name, &quot;example&quot;})
 
-<pre><code>selected?({:name, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -586,18 +583,18 @@ selected?(element_id)
     </ul>
   
   <div class="docstring"><p>Sends a submit event to any field or form element.</p>
-
-<pre><code>element_id = find_element(:name, &quot;username&quot;)
+<pre><code>
+element_id = find_element(:name, &quot;username&quot;)
 submit(element_id)
+
 </code></pre>
-
 <p>You can also directly pass the selector as a tuple.</p>
+<pre><code>
+submit({:name, &quot;username&quot;})
 
-<pre><code>submit({:name, &quot;username&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -617,19 +614,19 @@ submit(element_id)
       
     </ul>
   
-  <div class="docstring"><p>Gets an element&#39;s tag name.</p>
-
-<pre><code>element_id = find_element(:class, &quot;example&quot;)
+  <div class="docstring"><p>Gets an element’s tag name.</p>
+<pre><code>
+element_id = find_element(:class, &quot;example&quot;)
 tag_name(element_id)
+
 </code></pre>
-
 <p>You can also directly pass the selector as a tuple.</p>
+<pre><code>
+tag_name({:class, &quot;example&quot;})
 
-<pre><code>tag_name({:class, &quot;example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -650,18 +647,18 @@ tag_name(element_id)
     </ul>
   
   <div class="docstring"><p>Gets visible text of element. Requires the element ID.</p>
-
-<pre><code>element_id = find_element(:css, &quot;.example&quot;)
+<pre><code>
+element_id = find_element(:css, &quot;.example&quot;)
 visible_text(element_id)
+
 </code></pre>
-
 <p>You can also directly pass the selector as a tuple.</p>
+<pre><code>
+visible_text({:css, &quot;.example&quot;})
 
-<pre><code>visible_text({:css, &quot;.example&quot;})
+
 </code></pre>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 

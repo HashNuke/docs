@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.ScriptExecution.html">ScriptExecution</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; Helpers &rarr; <a href="Hound.Helpers.ScriptExecution.html">ScriptExecution</a></div>
 
       <h1>
         Hound.Helpers.ScriptExecution
@@ -41,8 +41,6 @@
 
       
 
-      
-        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
       
 
       
@@ -89,20 +87,20 @@
     </ul>
   
   <div class="docstring"><p>Execute javascript synchoronously.</p>
-
 <ul>
-<li>The first argument is the script to execute.</li>
+<li>The first argument is the script to execute.
+</li>
 <li><p>The second argument is a list of arguments that is passed.
-These arguments are accessible in the script via <code>arguments</code>.</p>
-
-<pre><code>execute_script(&quot;return(arguments[0] + arguments[1]);&quot;, [1, 2])
+  These arguments are accessible in the script via <code class="inline">arguments</code>.</p>
+<pre><code>
+execute_script(&quot;return(arguments[0] + arguments[1]);&quot;, [1, 2])
 
 execute_script(&quot;doSomething(); return(arguments[0] + arguments[1]);&quot;)
-</code></pre></li>
+
+</code></pre>
+</li>
 </ul>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -123,30 +121,28 @@ execute_script(&quot;doSomething(); return(arguments[0] + arguments[1]);&quot;)
     </ul>
   
   <div class="docstring"><p>Execute javascript asynchoronously.</p>
-
 <ul>
-<li>The first argument is the script to execute.</li>
+<li>The first argument is the script to execute.
+</li>
 <li>The second argument is a list of arguments that is passed.
-These arguments are accessible in the script via <code>arguments</code>.</li>
+  These arguments are accessible in the script via <code class="inline">arguments</code>.
+</li>
 </ul>
-
 <p>Webdriver passes a callback function as the last argument to the script.
 When your script has completed execution, it has to call the last argument,
 which is a callback function, to indicate that the execute is complete.</p>
-
-<pre><code># Once we perform whatever we want,
+<pre><code>
+# Once we perform whatever we want,
 # we call the callback function with the arguments that must be returned.
-execute_script_async(&quot;doSomething(); arguments[arguments.length-1](&#39;hello&#39;)&quot;, [])
+execute_script_async(&quot;doSomething(); arguments[arguments.length-1]('hello')&quot;, [])
 
-# We have no arguments to pass, so we&#39;ll skip the second argument.
-execute_script_async(&quot;console.log(&#39;hello&#39;); doSomething(); arguments[arguments.length-1]()&quot;)
+# We have no arguments to pass, so we'll skip the second argument.
+execute_script_async(&quot;console.log('hello'); doSomething(); arguments[arguments.length-1]()&quot;)
+
 </code></pre>
-
 <p>Unless you call the callback function, the function is not assumed to be completed.
 It will error out.</p>
 </div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 

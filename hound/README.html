@@ -20,31 +20,26 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="readme.html">README</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="readme.html">README</a></div>
       <h1>Hound</h1>
-
 <p>For browser automation and writing integration tests in Elixir.</p>
-
-<p><a href="http://github.com/HashNuke/Hound" target="_parent">Source</a> | <a href="http://akash.im/docs/hound" target="_parent">Documentation</a></p>
-
-<p><a href="https://travis-ci.org/HashNuke/hound"><img src="https://travis-ci.org/HashNuke/hound.png?branch=master" alt="Build Status"></a></p>
-
+<a href="http://github.com/HashNuke/Hound" target="_parent">Source</a> | <a href="http://akash.im/docs/hound" target="_parent">Documentation</a><p><a href="https://travis-ci.org/HashNuke/hound"><img src="https://travis-ci.org/HashNuke/hound.png?branch=master" alt="Build Status"/></a></p>
 <h2>Features</h2>
-
 <ul>
-<li><p>Can run <strong>multiple browser sessions</strong> simultaneously. <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">See example</a>.</p></li>
-<li><p>Supports Selenium (Firefox, Chrome), ChromeDriver and PhantomJs.</p></li>
-<li><p>Supports Javascript-heavy apps. Retries a few times before reporting error.</p></li>
-<li><p>Implements the WebDriver Wire Protocol.</p></li>
+<li><p>Can run <strong>multiple browser sessions</strong> simultaneously. <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">See example</a>.</p>
+</li>
+<li><p>Supports Selenium (Firefox, Chrome), ChromeDriver and PhantomJs.</p>
+</li>
+<li><p>Supports Javascript-heavy apps. Retries a few times before reporting error.</p>
+</li>
+<li>Implements the WebDriver Wire Protocol.
+</li>
 </ul>
-
-<p>**Internet Explorer may work under Selenium, but hasn&#39;t been tested.</p>
-
+<p>**Internet Explorer may work under Selenium, but hasn’t been tested.</p>
 <h4>Example</h4>
-
 <h5>ExUnit example</h5>
-
-<pre><code class="elixir">defmodule HoundTest do
+<pre><code class="elixir">
+defmodule HoundTest do
   use ExUnit.Case
   use Hound.Helpers
 
@@ -62,99 +57,85 @@
 
 end
 </code></pre>
-
-<p>Here&#39;s another <a href="https://github.com/HashNuke/hound/blob/master/docs/simple-browser-automation.md">simple browser-automation example</a>.</p>
-
+<p>Here’s another <a href="https://github.com/HashNuke/hound/blob/master/notes/simple-browser-automation.md">simple browser-automation example</a>.</p>
 <h2>Setup</h2>
-
 <p>Hound requires Erlang R16B02 or higher.</p>
-
 <ul>
 <li><p>Add dependency to your mix project</p>
-
-<pre><code class="elixir">{ :hound, github: &quot;HashNuke/hound&quot;, tag: &quot;v0.5.4&quot; }
-</code></pre></li>
-<li><p>Add Hound to the list of applications to start in your <code>mix.exs</code>. Recommended to start Hound in test environment only.</p>
-
-<pre><code class="elixir">def application do
+<p>  ```elixir
+  # If you are using hex
+  { :hound, “0.5.8” }</p>
+<p>  # If you are not using hex
+  { :hound, github: “HashNuke/hound”, tag: “v0.5.8” }
+  ```</p>
+</li>
+<li><p>Add Hound to the list of applications to start in your <code class="inline">mix.exs</code>. Recommended to start Hound in test environment only.</p>
+<p>  ```elixir
+  def application do
 [ applications: app_list(Mix.env) ]
-end
-
-defp app_list(:test) do: [:hound | app_list] end
-defp app_list(_)     do: app_list            end
-defp app_list        do: [:jsex, :ibrowse]   end
-</code></pre></li>
+  end</p>
+</li>
 </ul>
-
-<p>When you run <code>mix tests</code>, Hound is automatically started. <strong>You&#39;ll need a webdriver server</strong> running, like Selenium Server or Chrome Driver. If you aren&#39;t sure what it is, then <a href="https://github.com/HashNuke/hound/wiki/Starting-a-webdriver-server">read this</a>.</p>
-
+<p>  defp app<em>list(:test) do: [:hound | app_list] end
+  defp app_list(</em>)     do: app_list            end
+  defp app_list        do: [:jsex, :ibrowse]   end
+  ```</p>
+<p>When you run <code class="inline">mix tests</code>, Hound is automatically started. <strong>You’ll need a webdriver server</strong> running, like Selenium Server or Chrome Driver. If you aren’t sure what it is, then <a href="https://github.com/HashNuke/hound/wiki/Starting-a-webdriver-server">read this</a>.</p>
 <h2>Configure</h2>
-
-<p>To configure Hound, use your <code>config/config.exs</code> file or equivalent (v0.14.0 and above). <a href="https://github.com/HashNuke/hound/blob/master/docs/configuring-hound.md">Examples are here</a>.</p>
-
+<p>To configure Hound, use your <code class="inline">config/config.exs</code> file or equivalent (v0.14.0 and above). <a href="https://github.com/HashNuke/hound/blob/master/notes/configuring-hound.md">Examples are here</a>.</p>
 <h2>Usage</h2>
-
 <p>Add the following lines to your ExUnit test files.</p>
-
-<pre><code class="elixir"># Import helpers
+<pre><code class="elixir">
+# Import helpers
 use Hound.Helpers
 
 # Start hound session and destroy when tests are run
 hound_session
 </code></pre>
-
-<p>If you prefer to manually start and end sessions, use <code>Hound.start_session</code> and <code>Hound.end_session</code> in the setup and teardown blocks of your tests.</p>
-
+<p>If you prefer to manually start and end sessions, use <code class="inline">Hound.start_session</code> and <code class="inline">Hound.end_session</code> in the setup and teardown blocks of your tests.</p>
 <h2>Helpers</h2>
-
 <p>The documentation pages include examples under each function.</p>
-
 <ul>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Navigation.html">Navigation</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Page.html">Page</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Element.html">Element</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Cookie.html">Cookies</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.ScriptExecution.html">Javascript execution</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Dialog.html">Javascript dialogs</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Screenshot.html">Screenshot</a></li>
-<li><a href="http://akash.im/docs/hound/Hound.Helpers.Session.html">Session</a></li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Navigation.html">Navigation</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Page.html">Page</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Element.html">Element</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Cookie.html">Cookies</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.ScriptExecution.html">Javascript execution</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Dialog.html">Javascript dialogs</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Screenshot.html">Screenshot</a>
+</li>
+<li><a href="http://akash.im/docs/hound/Hound.Helpers.Session.html">Session</a>
+</li>
 </ul>
-
 <p>The docs are at <a href="http://akash.im/docs/hound">http://akash.im/docs/hound</a>.</p>
-
-<h3>More examples? <a href="https://github.com/HashNuke/hound/tree/master/test/json_driver">Checkout Hound&#39;s own test cases</a></h3>
-
+<h3>More examples? [Checkout Hound's own test cases](https://github.com/HashNuke/hound/tree/master/test/json_driver)</h3>
 <h2>FAQ</h2>
-
 <h4>Can I run multiple browser sessions simultaneously</h4>
-
 <p>Oh yeah ~! <a href="https://github.com/HashNuke/hound/blob/master/test/multiple_browser_session_test.exs">Here is an example</a>.</p>
-
 <p>If you are running PhantomJs, take a look at the <em>Caveats</em> section below.</p>
-
 <h4>Can I run tests async?</h4>
-
 <p>Yes.</p>
-
-<p>The number of tests you can run async at any point in time, depends on the number of sessions that your webdriver can maintain at a time. For Selenium Standalone, there seems to be a default limit of 15 sessions. You can set ExUnit&#39;s async option to limit the number of tests to run parallelly.</p>
-
+<p>The number of tests you can run async at any point in time, depends on the number of sessions that your webdriver can maintain at a time. For Selenium Standalone, there seems to be a default limit of 15 sessions. You can set ExUnit’s async option to limit the number of tests to run parallelly.</p>
 <h4>Will Hound gurantee an isolated session per test?</h4>
-
 <p>Yes. A seperate session is started for each session.</p>
-
 <h2>PhantomJs caveats</h2>
-
-<p>PhantomJs is extremely fast, but there are certain caveats. It uses Ghostdriver for it&#39;s webdriver server, which currently has unimplemented features or open issues.</p>
-
+<p>PhantomJs is extremely fast, but there are certain caveats. It uses Ghostdriver for it’s webdriver server, which currently has unimplemented features or open issues.</p>
 <ul>
-<li>Cookie jar isn&#39;t seperate for sessions - <a href="https://github.com/ariya/phantomjs/issues/11417">https://github.com/ariya/phantomjs/issues/11417</a>
-Which means all sessions share the same cookies. Make sure you run <code>delete_cookies()</code> at the end of each test.</li>
-<li>Isolated sessions were added to GhostDriver recently and are yet to land in a PhantomJs release.</li>
-<li>Javascript alerts aren&#39;t yet supported - <a href="https://github.com/detro/ghostdriver/issues/20">https://github.com/detro/ghostdriver/issues/20</a>.</li>
+<li>Cookie jar isn’t seperate for sessions - <a href="https://github.com/ariya/phantomjs/issues/11417">https://github.com/ariya/phantomjs/issues/11417</a>
+  Which means all sessions share the same cookies. Make sure you run <code class="inline">delete_cookies()</code> at the end of each test.
+</li>
+<li>Isolated sessions were added to GhostDriver recently and are yet to land in a PhantomJs release.
+</li>
+<li>Javascript alerts aren’t yet supported - <a href="https://github.com/detro/ghostdriver/issues/20">https://github.com/detro/ghostdriver/issues/20</a>.
+</li>
 </ul>
-
 <h2>License</h2>
-
 <p>Copyright &copy; 2013, Akash Manohar J, under the MIT License</p>
 
     </div>

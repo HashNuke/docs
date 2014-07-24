@@ -20,7 +20,7 @@
     </script>
 
     <div id="content">
-      <div class="breadcrumbs">hound v0.5.4 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.Page.html">Page</a></div>
+      <div class="breadcrumbs">hound v0.5.8 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Hound.html">Hound</a> &rarr; <a href="Hound.JsonDriver.html">JsonDriver</a> &rarr; <a href="Hound.JsonDriver.Page.html">Page</a></div>
 
       <h1>
         Hound.JsonDriver.Page
@@ -42,8 +42,6 @@
       
 
       
-        <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-      
 
       
         <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
@@ -53,19 +51,19 @@
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#find_all_elements/2">find_all_elements(strategy, selector)</a></td>
+  <td class="summary_signature"><a href="#find_all_elements/3">find_all_elements(strategy, selector, timeout_in_seconds)</a></td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#find_all_within_element/3">find_all_within_element(element_id, strategy, selector)</a></td>
+  <td class="summary_signature"><a href="#find_all_within_element/4">find_all_within_element(element_id, strategy, selector, timeout_in_seconds)</a></td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#find_element/2">find_element(strategy, selector)</a></td>
+  <td class="summary_signature"><a href="#find_element/3">find_element(strategy, selector, timeout_in_seconds)</a></td>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#find_within_element/3">find_within_element(element_id, strategy, selector)</a></td>
+  <td class="summary_signature"><a href="#find_within_element/4">find_within_element(element_id, strategy, selector, timeout_in_seconds)</a></td>
   
 </tr>
 <tr>
@@ -112,15 +110,13 @@
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
-  <div class="detail_header" id="find_all_elements/2">
-    <span class="signature"><strong>find_all_elements(strategy, selector)</strong></span>
+  <div class="detail_header" id="find_all_elements/3">
+    <span class="signature"><strong>find_all_elements(strategy, selector, timeout_in_seconds)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#find_all_elements/2" class="detail_link" title="Link to this function">#</a>
+      <a href="#find_all_elements/3" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -128,21 +124,19 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>find_all_elements(atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/List.html#t:t/0">List.t</a></li>
+        <li>find_all_elements(atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/Integer.html#t:t/0">Integer.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/List.html#t:t/0">List.t</a></li>
       
     </ul>
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
-  <div class="detail_header" id="find_all_within_element/3">
-    <span class="signature"><strong>find_all_within_element(element_id, strategy, selector)</strong></span>
+  <div class="detail_header" id="find_all_within_element/4">
+    <span class="signature"><strong>find_all_within_element(element_id, strategy, selector, timeout_in_seconds)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#find_all_within_element/3" class="detail_link" title="Link to this function">#</a>
+      <a href="#find_all_within_element/4" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -150,21 +144,19 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>find_all_within_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/List.html#t:t/0">List.t</a></li>
+        <li>find_all_within_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/Integer.html#t:t/0">Integer.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/List.html#t:t/0">List.t</a></li>
       
     </ul>
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
-  <div class="detail_header" id="find_element/2">
-    <span class="signature"><strong>find_element(strategy, selector)</strong></span>
+  <div class="detail_header" id="find_element/3">
+    <span class="signature"><strong>find_element(strategy, selector, timeout_in_seconds)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#find_element/2" class="detail_link" title="Link to this function">#</a>
+      <a href="#find_element/3" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -172,21 +164,19 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>find_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/Dict.html#t:t/0">Dict.t</a></li>
+        <li>find_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/Integer.html#t:t/0">Integer.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/Dict.html#t:t/0">Dict.t</a></li>
       
     </ul>
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
-  <div class="detail_header" id="find_within_element/3">
-    <span class="signature"><strong>find_within_element(element_id, strategy, selector)</strong></span>
+  <div class="detail_header" id="find_within_element/4">
+    <span class="signature"><strong>find_within_element(element_id, strategy, selector, timeout_in_seconds)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#find_within_element/3" class="detail_link" title="Link to this function">#</a>
+      <a href="#find_within_element/4" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -194,13 +184,11 @@
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>find_within_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/Dict.html#t:t/0">Dict.t</a></li>
+        <li>find_within_element(<a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, atom, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>, <a href="http://elixir-lang.org/docs/stable/elixir/Integer.html#t:t/0">Integer.t</a>) :: <a href="http://elixir-lang.org/docs/stable/elixir/Dict.html#t:t/0">Dict.t</a></li>
       
     </ul>
   
   <div class="docstring"></div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -222,8 +210,6 @@
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
   <div class="detail_header" id="page_title/0">
@@ -243,8 +229,6 @@
     </ul>
   
   <div class="docstring"></div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 <div class="detail">
@@ -266,8 +250,6 @@
   
   <div class="docstring"></div>
   
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
-  
 </div>
 <div class="detail">
   <div class="detail_header" id="send_text/1">
@@ -287,8 +269,6 @@
     </ul>
   
   <div class="docstring"></div>
-  
-    <a href="http://github.com/HashNuke/hound" class="view_source">Source</a>
   
 </div>
 
